@@ -1,8 +1,7 @@
 import "./styles/theme.css";
 import "./styles/Global.css";
 
-export function App(){
-    console.log("oi")
+export function App(){ 
     return (
         <>
         <h1>Ola</h1>
