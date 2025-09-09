@@ -2,8 +2,10 @@
 
 import './styles/theme.css';
 import './styles/Global.css';
-import { Container } from 'lucide-react';
+
 import { Heading } from './componentes/Heading';
+import  { Container } from './componentes/Container';
+import { Logo } from './componentes/Logo';
 
 
 
@@ -11,7 +13,7 @@ export function App(){
      return (
      <> 
      <Container> 
-     <Heading>LOGO</Heading>
+     <Logo/>
     </Container>
 
      <Container> 
@@ -25,8 +27,6 @@ export function App(){
      <Container> 
      <Heading>footer</Heading>
     </Container>
-
-     
      </>
      );
 }
