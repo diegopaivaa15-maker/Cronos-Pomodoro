@@ -1,5 +1,5 @@
-import './styles/theme.css'
-import './styles/global.css'
+import './styles/Theme.css'
+import './styles/Global.css'
 
 export function App(){
     return ( 
