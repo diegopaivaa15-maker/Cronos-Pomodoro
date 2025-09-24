@@ -1,0 +1,13 @@
+.container{
+  max-width: 98rem;
+  margin: 0 auto;
+}
+
+.container-fluid{
+max-width: auto;
+}
+
+.content{
+  margin: 3.2rem; /* aqui ajuda a minha pagina quando eu diminuir nao empurra o conteudo */
+}
+

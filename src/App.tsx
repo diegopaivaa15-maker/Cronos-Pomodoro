@@ -1,12 +1,37 @@
 import './styles/Theme.css'
 import './styles/Global.css'
 
+
+
+import { Container } from './componentes/Container';
+import { Logo } from './componentes/Logo';
+import { Menu } from './componentes/Menu';
+
+
 export function App(){
     return ( 
     <>
-    <h1>Ola Mundo</h1>
-    
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus porro ab molestias, voluptatibus dignissimos cum sunt placeat earum, perspiciatis fugiat nihil repudiandae, vel quasi quibusdam deserunt doloremque autem. Fuga, similique.</p>
+            <Container>
+            <Logo/>
+            </Container>
+            
+                <Container>
+                    <Menu/>
+                    </Container>
+
+                        <Container>
+                            <section>FORM</section>
+                         </Container>
+
+                            <Container>
+                              <section>LOGO</section>
+                            </Container>
+
+        
+
+        
+
+   
    </>
     );
 }
