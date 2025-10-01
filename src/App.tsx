@@ -8,6 +8,7 @@ import { Logo } from './componentes/Logo';
 import { Menu } from './componentes/Menu';
 import { CountDown } from './componentes/CountDown';
 import { DefaultInput } from './componentes/DefaultInput';
+import { Cycles } from './componentes/Cycles/indext';
 
 
 export function App(){
@@ -36,8 +37,7 @@ export function App(){
                                 </div>
 
                                 <div className='formRow'>
-                                    <p>Ciclos</p>
-                                    <p>0 0 0 0</p>
+                                  <Cycles/>
                                 </div>
 
                                 <div className='formRow'>
