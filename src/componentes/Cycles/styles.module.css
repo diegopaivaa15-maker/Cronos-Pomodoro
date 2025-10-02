@@ -2,10 +2,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1.6rem;
 }
 
 .cycleDot{
+    display: inline-block;
     width: 2rem;
     height: 2rem;
     background-color: var(--primary);
@@ -13,8 +15,7 @@
 }
 
 .cycleDots{
-    display: flex;
-    gap: 0.8rem;
+      gap: 0.8rem;
 }
 
 .workTime{
