@@ -11,6 +11,7 @@ import { DefaultInput } from './componentes/DefaultInput';
 import { Cycles } from './componentes/Cycles/indext';
 import { DefaultButton } from './componentes/DefaultButton';
 import { PlayCircle } from 'lucide-react';
+import { Footer } from './componentes/Footer';
 
 
 export function App(){
@@ -47,7 +48,12 @@ export function App(){
                                 </div>
                             </form>
                          </Container>
+
+                         <Container>
+                          <Footer/>
+                         </Container>
+                         
    </>
-    );
+ );
 }
 
