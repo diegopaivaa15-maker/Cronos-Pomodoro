@@ -18,23 +18,23 @@ export function MainTemplets({children}: MainTempletsProps){
             <Logo/>
             </Container>
             
+             <Container>
+             <Menu/>
+             </Container>
+
+              <Container>
+              <CountDown/>
+              </Container>
+
+              <Container>
+                <MainForm/>
+               </Container>
+
+            {children}
+
                 <Container>
-                    <Menu/>
-                    </Container>
-
-                        <Container>
-                            <CountDown/>
-                         </Container>
-
-                            <Container>
-                           <MainForm/>
-                         </Container>
-
-                         {children}
-
-                         <Container>
-                          <Footer/>
-                         </Container>
+                <Footer/>
+                </Container>
                          
    </>
  );
