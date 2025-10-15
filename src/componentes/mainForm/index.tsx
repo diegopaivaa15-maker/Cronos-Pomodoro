@@ -1,24 +1,10 @@
 
-import { PlayCircleIcon } from "lucide-react";
-import type { HomeProps } from "../../PAGES";
+import { PlayCircleIcon } from "lucide-react"
 import { Cycles } from "../Cycles/indext";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
 
-export function MainForm({state, setState}: HomeProps){
-  function handleClick(){ 
-
-    setState(prevState => {
-      return {
-        ...prevState,
-        config: {
-          ...prevState.config,
-          workTime: 34,
-        },
-        formattedSecondsRemaining: "23:34",
-      };
-    });
-  }
+export function MainForm(){
 
   return ( 
     <form className='form' action=''>
