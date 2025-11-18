@@ -1,21 +1,23 @@
-import { useEffect, useState } from "react";
-import { initialTaskState } from "../initialTaskState";
+import { useEffect, useReducer} from "react";
 import { TaskContext } from "./TaskContext";
+import { initialTaskState } from "../initialTaskState";
+import { taskReducer } from "./TaskReducer";
 
-type taskContextProviderProps={
-    children: React.ReactNode
-};
 
-export function TaskContextProvider({children}:taskContextProviderProps){
-    const [state, setState] = useState(initialTaskState);
+  type TtaskContextProviderProps = {
+    children: React.ReactNode;
+  };
 
-    useEffect(()=>{
+export function TaskContextProvider({children}:TtaskContextProviderProps){
+    const [ state,dispatch ] = useReducer(taskReducer, initialTaskState);
 
-    },[state])
+    useEffect(()=> {
+        console.log(state);
+    },[state]);
     
-    return (  
-    <TaskContext.Provider value ={{state, setState}}>
-        {children}
+   return (
+    <TaskContext.Provider value={{ state,dispatch }}>
+    {children}
     </TaskContext.Provider>
-    );
+  );
 }

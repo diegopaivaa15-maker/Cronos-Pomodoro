@@ -8,17 +8,21 @@ import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../TaskContext/TaskContext/UseTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycletype } from "../../utils/getNextCycletype";
-import { formatSegunds } from "../../utils/FormatSegunds";
+import { TaskActionTypes } from "../../TaskContext/TaskContext/TaskActions";
+import { Tips } from "../tips";
+
 
 
 
 export function MainForm(){
-  const {state, setState} = useTaskContext();
+  const {state, dispatch } = useTaskContext();
     const taskNameInput = useRef<HTMLInputElement> (null);
 
     //Ciclos
     const nextCycle = getNextCycle(state.currentCycle);
     const nextCyletype = getNextCycletype (nextCycle);
+
+   
   
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>){
       event.preventDefault();
@@ -41,36 +45,13 @@ export function MainForm(){
         type: nextCyletype,
       };
 
-      const secondsRemaning = newTask.duration * 60
+      dispatch({type: TaskActionTypes.START_TASK, playload:newTask});
       
-      setState(prevState => {
-        return { 
-        ...prevState,
-        config: {...prevState.config},
-        activeTask: newTask,
-        CurrentCycle: nextCycle,
-        secondsRemaning, //conferir 
-        formattedSecondsRemaining: formatSegunds(secondsRemaning),
-        tasks: [...prevState.tasks, newTask],
-        };
-      });
     }
 
     function haldeInterrrupTask (){
-      setState(prevState => {
-        return { 
-        ...prevState,
-        activeTask: null,
-        secondsRemaning: 0,
-        formattedSecondsRemaining: `00:00`,
-        tasks: prevState.tasks.map(task => {
-          if(prevState.activeTask && prevState.activeTask.id === task.id){
-            return {...task, interruptDate: Date.now()}
-          }
-          return task;
-        })
-        };
-      });
+    dispatch({type: TaskActionTypes.INTERRUPT_TASK})
+     
     }
 
   return ( 
@@ -88,7 +69,7 @@ export function MainForm(){
       </div>
 
       <div className='formRow'>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <Tips/>
       </div>
 
       {state.currentCycle > 0 &&(
