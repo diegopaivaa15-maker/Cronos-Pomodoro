@@ -12,8 +12,6 @@ import { TaskActionTypes } from "../../TaskContext/TaskContext/TaskActions";
 import { Tips } from "../tips";
 
 
-
-
 export function MainForm(){
   const {state, dispatch } = useTaskContext();
     const taskNameInput = useRef<HTMLInputElement> (null);
@@ -22,8 +20,6 @@ export function MainForm(){
     const nextCycle = getNextCycle(state.currentCycle);
     const nextCyletype = getNextCycletype (nextCycle);
 
-   
-  
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>){
       event.preventDefault();
   
@@ -44,9 +40,7 @@ export function MainForm(){
         duration: state.config[nextCyletype],
         type: nextCyletype,
       };
-
-      dispatch({type: TaskActionTypes.START_TASK, playload:newTask});
-      
+    
     }
 
     function haldeInterrrupTask (){
